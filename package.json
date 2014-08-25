@@ -1,6 +1,7 @@
 {
-  "name": "netportpilotapp",
-  "version": "0.0.0",
+  "name": "NetportPilotApp",
+  "repository": "https://github.com/open-dai/netport-pilot-app.git",
+  "version": "2.0.0-alpha",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
