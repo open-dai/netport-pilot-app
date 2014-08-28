@@ -1,0 +1,59 @@
+
+//
+// Vendor libraries
+//
+
+@import "bootstrap";
+@import "font-awesome";
+@import "base16/ocean";
+@import "base16-bootstrap/dark";
+
+//
+// App variables
+// Override vendor variables here
+//
+
+@import "variables";
+
+//
+// Landmarks
+// A type of region on a page to which the user may want quick access.
+// http://www.w3.org/TR/wai-aria/terms#def_landmark
+//
+
+@import "landmarks/main";
+@import "landmarks/banner";
+@import "landmarks/navigation";
+
+//
+// Widgets
+// Discrete user interface object with which the user can interact.
+// http://www.w3.org/TR/wai-aria/terms#def_widget
+//
+
+@import "widgets/labels";
+@import "widgets/navbar";
+@import "widgets/alerts";
+@import "widgets/panels";
+@import "widgets/list-group";
+@import "widgets/leaflet";
+
+//
+// Basic styles
+//
+
+body {
+
+  // Make space for fixed navbar
+  padding-top: @navbar-height + (@grid-gutter-width / 2);
+}
+
+[class^="col-"] {
+
+  // Add a default margin to all cols
+  margin-bottom: (@grid-gutter-width / 2);
+}
+
+.text-status {
+  color: @base04;
+}
