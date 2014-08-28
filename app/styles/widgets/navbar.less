@@ -1,0 +1,39 @@
+//
+// Navbars
+// --------------------------------------------------
+
+// Fix the top/bottom navbars when screen real estate supports it
+.navbar-fixed-top {
+
+  // Fake a margin that stays in place when content scrolls below the navbar
+  border-top: (@grid-gutter-width / 2) solid @body-bg;
+  border-bottom: (@grid-gutter-width / 2) solid @body-bg;
+
+  // Line up with grid
+  right: (@grid-gutter-width / 2);
+  left: (@grid-gutter-width / 2);
+  padding-left: @padding-base-horizontal;
+  padding-right: @padding-base-horizontal;
+}
+
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+.navbar-header {
+  .clearfix();
+  .text-center;
+
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .navbar-brand {
+    float: none;
+  }
+  @media (min-width: @grid-float-breakpoint) {
+    float: none;
+  }
+}
+

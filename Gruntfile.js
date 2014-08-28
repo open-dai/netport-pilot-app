@@ -32,6 +32,10 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: true
             },
+            less: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+                tasks: ['less']
+            },
             livereload: {
                 options: {
                     livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
@@ -128,6 +132,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        less: {
+            development: {
+                options: {
+                    paths: ['<%= yeoman.app %>/styles', '<%= yeoman.app %>/bower_components/bootstrap/less', '<%= yeoman.app %>/bower_components/font-awesome/less', '<%= yeoman.app %>/bower_components/base16-less']
+                },
+                files: {
+                    '<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.less']
+                }
+            }
+        },
         requirejs: {
             dist: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
@@ -180,7 +194,8 @@ module.exports = function (grunt) {
                 files: {
                     '<%= yeoman.dist %>/styles/main.css': [
                         '.tmp/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/styles/{,*/}*.css'
+                        '<%= yeoman.app %>/styles/{,*/}*.css',
+                        '<%= yeoman.app %>/bower_components/leaflet-dist/{,*/}*.css'
                     ]
                 }
             }
@@ -271,6 +286,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'createDefaultTemplate',
                 'handlebars',
+                'less',
                 'connect:test',
                 'open:test',
                 'watch'
@@ -281,6 +297,7 @@ module.exports = function (grunt) {
             'clean:server',
             'createDefaultTemplate',
             'handlebars',
+            'less',
             'connect:livereload',
             'open:server',
             'watch'
@@ -293,6 +310,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'createDefaultTemplate',
                 'handlebars',
+                'less',
                 'connect:test',
                 'mocha',
             ];
@@ -310,6 +328,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'createDefaultTemplate',
         'handlebars',
+        'less',
         'useminPrepare',
         'requirejs',
         'imagemin',
