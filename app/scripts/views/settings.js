@@ -8,7 +8,7 @@ define([
 
     var SettingsView = Backbone.View.extend({
         template: JST['app/scripts/templates/settings.hbs'],
-        el: '.content',
+        el: '.main',
 
         events: {},
 

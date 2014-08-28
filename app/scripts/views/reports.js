@@ -11,9 +11,9 @@ define([
 
     Reports.List = Backbone.View.extend({
         template: JST['app/scripts/templates/reports.hbs'],
-        el: '.content',
+        el: '.main',
         events: {
-            
+
         },
         initialize: function () {
             //this.render();
@@ -28,7 +28,7 @@ define([
 
     Reports.Single = Backbone.View.extend({
         template: JST['app/scripts/templates/report.hbs'],
-        el: '.content',
+        el: '.main',
         events: {
 
         },

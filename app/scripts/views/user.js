@@ -11,7 +11,7 @@ define([
 
     var UserView = Backbone.View.extend({
         template: JST['app/scripts/templates/user.hbs'],
-        el: '.content',
+        el: '.main',
         model: UserModel,
         events: {
             'click .logout': 'logout'
@@ -37,7 +37,7 @@ define([
                     });
                 }
             });
-            
+
         },
 
         logout: function() {

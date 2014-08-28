@@ -138,7 +138,7 @@ module.exports = function (grunt) {
                     paths: ['<%= yeoman.app %>/styles', '<%= yeoman.app %>/bower_components/bootstrap/less', '<%= yeoman.app %>/bower_components/font-awesome/less', '<%= yeoman.app %>/bower_components/base16-less']
                 },
                 files: {
-                    '<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.less']
+                    '<%= yeoman.app %>/styles/application.css': ['<%= yeoman.app %>/styles/application.less']
                 }
             }
         },
@@ -195,7 +195,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/styles/main.css': [
                         '.tmp/styles/{,*/}*.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/bower_components/leaflet-dist/{,*/}*.css'
+                        '<%= yeoman.app %>/bower_components/leaflet-dist/leaflet.css'
                     ]
                 }
             }

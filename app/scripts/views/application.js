@@ -8,28 +8,28 @@ define([
 
     var View = {};
 
-    View.Layout = Backbone.View.extend({
-        template: JST['app/scripts/templates/layout.hbs'],
-        el: '.container',
+    View.Application = Backbone.View.extend({
+        template: JST['app/scripts/templates/application.hbs'],
+        el: '.application',
 
         initialize: function () {
             //this.render();
         },
 
         render: function () {
-            console.log('rendering layout');
+            console.log('Rendering Application');
             this.$el.html(this.template());
-            var header = new View.Header();
-            header.render();
-            var footer = new View.Footer();
-            footer.render();
+            var bannerView = new View.Banner();
+            bannerView.render();
+            var contentInfoView = new View.ContentInfo();
+            contentInfoView.render();
         }
 
     });
 
-    View.Header = Backbone.View.extend({
-        template: JST['app/scripts/templates/header.hbs'],
-        el: '.header',
+    View.Banner = Backbone.View.extend({
+        template: JST['app/scripts/templates/banner.hbs'],
+        el: '.banner',
         events: {
             'click li': 'change'
         },
@@ -39,7 +39,7 @@ define([
         },
 
         render: function() {
-            console.log('rendering header');
+            console.log('Rendering Banner');
             this.$el.html(this.template());
         },
 
@@ -49,15 +49,15 @@ define([
 
     });
 
-    View.Footer = Backbone.View.extend({
-        template: JST['app/scripts/templates/footer.hbs'],
-        el: '.footer',
+    View.ContentInfo = Backbone.View.extend({
+        template: JST['app/scripts/templates/contentinfo.hbs'],
+        el: '.contentinfo',
         initialize: function() {
             //this.render();
         },
 
         render: function() {
-            console.log('rendering footer');
+            console.log('Rendering ContentInfo');
             this.$el.html(this.template());
         }
     });

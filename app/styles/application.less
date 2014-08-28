@@ -23,7 +23,6 @@
 
 @import "landmarks/main";
 @import "landmarks/banner";
-@import "landmarks/navigation";
 
 //
 // Widgets
@@ -36,7 +35,6 @@
 @import "widgets/alerts";
 @import "widgets/panels";
 @import "widgets/list-group";
-@import "widgets/leaflet";
 
 //
 // Basic styles
@@ -46,6 +44,10 @@ body {
 
   // Make space for fixed navbar
   padding-top: @navbar-height + (@grid-gutter-width / 2);
+}
+
+.application {
+  .container;
 }
 
 [class^="col-"] {

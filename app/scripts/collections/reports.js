@@ -12,11 +12,11 @@ define(['backbone', 'models/report'], function(Backbone, ReportModel){
         },
 
         ajaxStart: function() {
-            $('.content').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
+            $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
         },
 
         ajaxComplete: function() {
-            
+
         }
     });
 
