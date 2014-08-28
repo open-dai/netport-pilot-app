@@ -46,8 +46,8 @@ require([
             FB.api('/me', function(response){
                 UserModel.set(response);
                 FB.api('/me?fields=picture', function(response){
-                    router.navigate('#reports');
                     UserModel.set(response.name);
+                    router.navigate('#reports', {trigger: true});
                 });
             });
             
