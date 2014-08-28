@@ -8,16 +8,16 @@ define([
 
     var View = {};
 
-    View.Layout = Backbone.View.extend({
-        template: JST['app/scripts/templates/layout.hbs'],
-        el: '.container',
+    View.App = Backbone.View.extend({
+        template: JST['app/scripts/templates/app.hbs'],
+        el: '.app',
 
         initialize: function () {
             //this.render();
         },
 
         render: function () {
-            console.log('rendering layout');
+            console.log('rendering app');
             this.$el.html(this.template());
             var header = new View.Header();
             header.render();
