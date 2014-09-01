@@ -31,6 +31,7 @@
 //
 
 @import "widgets/labels";
+@import "widgets/titlebar";
 @import "widgets/menubar";
 @import "widgets/alerts";
 @import "widgets/panels";
@@ -42,8 +43,11 @@
 
 body {
 
-  // Make space for fixed navbar
-  padding-bottom: @navbar-height + (@grid-gutter-width / 2);
+  // Make space for fixed titlebar
+  padding-top: @navbar-height;
+
+  // Make space for fixed menubar
+  padding-bottom: @navbar-height;
 }
 
 .application {
