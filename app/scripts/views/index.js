@@ -9,7 +9,7 @@ define(['backbone', 'templates'], function(Backbone, JST){
         },
 
         render: function () {
-            console.log('rendering app');
+            console.log('rendering layout');
             this.$el.html(this.template());
         }
     });

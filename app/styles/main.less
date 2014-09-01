@@ -21,6 +21,7 @@
 // http://www.w3.org/TR/wai-aria/terms#def_landmark
 //
 
+@import "landmarks/main";
 @import "landmarks/banner";
 @import "landmarks/navigation";
 
@@ -45,12 +46,6 @@ body {
 
   // Make space for fixed navbar
   padding-top: @navbar-height + (@grid-gutter-width / 2);
-}
-
-.app {
-
-  // Main app container extends Bootstrap grid container
-  .container;
 }
 
 [class^="col-"] {

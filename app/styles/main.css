@@ -5611,10 +5611,10 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+#main:before,
+#main:after,
 #banner:before,
-#banner:after,
-.app:before,
-.app:after {
+#banner:after {
   content: " ";
   display: table;
 }
@@ -5633,8 +5633,8 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#banner:after,
-.app:after {
+#main:after,
+#banner:after {
   clear: both;
 }
 .center-block {
@@ -7555,6 +7555,39 @@ button.close {
 .fa-meanpath:before {
   content: "\f20c";
 }
+#main {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media (min-width: 768px) {
+  #main {
+    width: 730px;
+  }
+}
+@media (min-width: 992px) {
+  #main {
+    width: 950px;
+  }
+}
+@media (min-width: 1200px) {
+  #main {
+    width: 1150px;
+  }
+}
+#main > .navbar-header,
+#main > .navbar-collapse {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+@media (min-width: 0) {
+  #main > .navbar-header,
+  #main > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 #banner {
   margin-right: auto;
   margin-left: auto;
@@ -7722,39 +7755,6 @@ button.close {
 }
 body {
   padding-top: 55px;
-}
-.app {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-@media (min-width: 768px) {
-  .app {
-    width: 730px;
-  }
-}
-@media (min-width: 992px) {
-  .app {
-    width: 950px;
-  }
-}
-@media (min-width: 1200px) {
-  .app {
-    width: 1150px;
-  }
-}
-.app > .navbar-header,
-.app > .navbar-collapse {
-  margin-right: -5px;
-  margin-left: -5px;
-}
-@media (min-width: 0) {
-  .app > .navbar-header,
-  .app > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 [class^="col-"] {
   margin-bottom: 5px;
