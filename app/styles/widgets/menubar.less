@@ -1,9 +1,15 @@
 
+// Menubar styles
+// --------------------------------------------------
+
+// Make space for fixed menubar
+body { padding-bottom: @navbar-height; }
+
 .menubar {
 
   // Inherit from Bootstrap .navbar
   .navbar;
-  .navbar-default;
+  .navbar-inverse;
   .navbar-fixed-bottom;
 
   // Un-float the menu items

@@ -1,53 +1,31 @@
 
-// Components
-// -------------------------
-
-@padding-base-vertical:          8px;
-@padding-base-horizontal:        10px;
-
-@padding-large-vertical:         16px;
-@padding-large-horizontal:       20px;
-
-@padding-small-vertical:         4px;
-@padding-small-horizontal:       5px;
-
-@border-radius-base:             1px;
-@border-radius-large:            3px;
-@border-radius-small:            0px;
-
-
-// Grid system
-// --------------------------------------------------
-
-// Number of columns in the grid system
-@grid-columns:              6;
-// Padding, to be divided by two and applied to the left and right of all columns
-@grid-gutter-width:         10px;
-// Point at which the navbar stops collapsing
-// @grid-float-breakpoint:     0;
-
-
-// Forms
-// -------------------------
-
-@input-border-radius:             @border-radius-large;
-
-
-// Buttons
-// -------------------------
-
-@button-border-radius:            @border-radius-large;
-
-
-// Tables
-// -------------------------
-
-@table-border-color:                 @body-bg;
-
-
 //== Navbar
 //
 //##
 
+@navbar-default-color:             @base02;
+@navbar-default-bg:                fade(@base07, 94%);
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+
+// Navbar toggle
 @navbar-default-toggle-border-color:       transparent;
 
+// Inverted navbar
+// Reset inverted navbar basics
+@navbar-inverse-color:                      @base07;
+@navbar-inverse-bg:                         fade(@base0C, 94%);
+@navbar-inverse-border:                     darken(@navbar-inverse-bg, 6.5%%);
+
+// Inverted navbar links
+@navbar-inverse-link-color:                 @base07;
+@navbar-inverse-link-hover-color:           white;
+@navbar-inverse-link-hover-bg:              transparent;
+@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
+@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 6.5%);
+@navbar-inverse-link-disabled-color:        fade(@base07, 70%);
+@navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-hover-color:          #fff;
+@navbar-inverse-brand-hover-bg:             transparent;

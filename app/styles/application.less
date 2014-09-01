@@ -36,30 +36,3 @@
 @import "widgets/alerts";
 @import "widgets/panels";
 @import "widgets/list-group";
-
-//
-// Basic styles
-//
-
-body {
-
-  // Make space for fixed titlebar
-  padding-top: @navbar-height;
-
-  // Make space for fixed menubar
-  padding-bottom: @navbar-height;
-}
-
-.application {
-  .container;
-}
-
-[class^="col-"] {
-
-  // Add a default margin to all cols
-  margin-bottom: (@grid-gutter-width / 2);
-}
-
-.text-status {
-  color: @base04;
-}
