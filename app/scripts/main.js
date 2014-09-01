@@ -32,8 +32,9 @@ require.config({
 require([
     'backbone',
     'routers/main',
-    'models/user'
-], function (Backbone, MainRouter, UserModel) {
+    'models/user',
+    'facebook'
+], function (Backbone, MainRouter, UserModel, FB) {
     var router = new MainRouter();
 
     FB.init({
@@ -50,10 +51,10 @@ require([
                     router.navigate('#reports', {trigger: true});
                 });
             });
-            
+
         }
     });
 
-    
+
     Backbone.history.start();
 });

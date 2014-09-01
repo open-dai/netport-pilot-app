@@ -135,10 +135,18 @@ module.exports = function (grunt) {
         less: {
             development: {
                 options: {
-                    paths: ['<%= yeoman.app %>/styles', '<%= yeoman.app %>/bower_components/bootstrap/less', '<%= yeoman.app %>/bower_components/font-awesome/less', '<%= yeoman.app %>/bower_components/base16-less']
+                    // Paths determine the order in which the less compiler searches for variables and mixins
+                    paths: [
+                        '<%= yeoman.app %>/styles',
+                        '<%= yeoman.app %>/bower_components/bootstrap/less',
+                        '<%= yeoman.app %>/bower_components/font-awesome/less',
+                        '<%= yeoman.app %>/bower_components/base16-less'
+                    ]
                 },
                 files: {
-                    '<%= yeoman.app %>/styles/application.css': ['<%= yeoman.app %>/styles/application.less']
+                    '<%= yeoman.app %>/styles/application.css': [
+						'<%= yeoman.app %>/styles/application.less'
+					]
                 }
             }
         },
@@ -194,8 +202,7 @@ module.exports = function (grunt) {
                 files: {
                     '<%= yeoman.dist %>/styles/main.css': [
                         '.tmp/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/bower_components/leaflet-dist/leaflet.css'
+                        '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
                 }
             }
