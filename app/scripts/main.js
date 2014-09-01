@@ -37,6 +37,8 @@ require([
 ], function (Backbone, MainRouter, UserModel, FB) {
     var router = new MainRouter();
 
+    Backbone.history.start();
+
     FB.init({
         appId      : '661666163920134',
     });
@@ -55,6 +57,6 @@ require([
         }
     });
 
+    //Make something global
 
-    Backbone.history.start();
 });
