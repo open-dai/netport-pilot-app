@@ -1,0 +1,44 @@
+
+// Report list styles
+// --------------------------------------------------
+
+.report-list {
+
+  // Extend the Bootstrap list group
+  .list-group;
+  .report-list-item { .list-group-item; }
+
+  .report-status {
+    .pull-right;
+    .label;
+  }
+  .status-1 .report-status {
+    .hide;
+  }
+  .status-2 .report-status {
+    .label-default;
+  }
+  .status-3 .report-status {
+    .label-primary;
+  }
+  .status-4 .report-status {
+    .label-success;
+  }
+  .status-5 .report-status {
+    .label-warning;
+  }
+
+  .report-added {
+    font-size: @font-size-small;
+  }
+
+  .report-type {
+    display: block;
+    font-weight: bold;
+  }
+
+  .report-description {
+    font-size: @font-size-small;
+    font-style: italic;
+  }
+}

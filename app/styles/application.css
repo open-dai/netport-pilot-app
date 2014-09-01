@@ -4797,17 +4797,17 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #e6e6e6;
-  border: 1px solid #339966;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
 }
 .list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 .list-group-item:last-child {
   margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .list-group-item > .badge {
   float: right;
@@ -4819,13 +4819,13 @@ a.list-group-item {
   color: #333333;
 }
 a.list-group-item .list-group-item-heading {
-  color: #666666;
+  color: #339966;
 }
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
   color: #333333;
-  background-color: #d6d6d6;
+  background-color: #f0f0f0;
 }
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
@@ -8126,56 +8126,139 @@ fieldset[disabled] .menubar .btn-link:focus {
   float: none;
   display: inline-block;
 }
-.alert-success {
-  background-color: #339933;
-  border-color: #339933;
-  color: #f2f2f2;
+.report-list {
+  margin-bottom: 20px;
+  padding-left: 0;
 }
-.alert-success hr {
-  border-top-color: #2d862d;
+.report-list .report-list-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
 }
-.alert-success .alert-link {
-  color: #d9d9d9;
+.report-list .report-list-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
-.alert-info {
-  background-color: #339966;
-  border-color: #339966;
-  color: #f2f2f2;
+.report-list .report-list-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
-.alert-info hr {
-  border-top-color: #2d8659;
-}
-.alert-info .alert-link {
-  color: #d9d9d9;
-}
-.alert-warning {
-  background-color: #ff9933;
-  border-color: #ff9933;
-  color: #f2f2f2;
-}
-.alert-warning hr {
-  border-top-color: #ff8c19;
-}
-.alert-warning .alert-link {
-  color: #d9d9d9;
-}
-.alert-danger {
-  background-color: #cc0033;
-  border-color: #cc0033;
-  color: #f2f2f2;
-}
-.alert-danger hr {
-  border-top-color: #b3002d;
-}
-.alert-danger .alert-link {
-  color: #d9d9d9;
-}
-.panel {
-  border: none;
-}
-.list-group-item > .label {
+.report-list .report-list-item > .badge {
   float: right;
 }
-.list-group-item > .label + .label {
+.report-list .report-list-item > .badge + .badge {
   margin-right: 5px;
+}
+.report-list .report-list-item.disabled,
+.report-list .report-list-item.disabled:hover,
+.report-list .report-list-item.disabled:focus {
+  background-color: #e6e6e6;
+  color: #cccccc;
+}
+.report-list .report-list-item.disabled .list-group-item-heading,
+.report-list .report-list-item.disabled:hover .list-group-item-heading,
+.report-list .report-list-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.report-list .report-list-item.disabled .list-group-item-text,
+.report-list .report-list-item.disabled:hover .list-group-item-text,
+.report-list .report-list-item.disabled:focus .list-group-item-text {
+  color: #cccccc;
+}
+.report-list .report-list-item.active,
+.report-list .report-list-item.active:hover,
+.report-list .report-list-item.active:focus {
+  z-index: 2;
+  color: #001429;
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+.report-list .report-list-item.active .list-group-item-heading,
+.report-list .report-list-item.active:hover .list-group-item-heading,
+.report-list .report-list-item.active:focus .list-group-item-heading,
+.report-list .report-list-item.active .list-group-item-heading > small,
+.report-list .report-list-item.active:hover .list-group-item-heading > small,
+.report-list .report-list-item.active:focus .list-group-item-heading > small,
+.report-list .report-list-item.active .list-group-item-heading > .small,
+.report-list .report-list-item.active:hover .list-group-item-heading > .small,
+.report-list .report-list-item.active:focus .list-group-item-heading > .small {
+  color: inherit;
+}
+.report-list .report-list-item.active .list-group-item-text,
+.report-list .report-list-item.active:hover .list-group-item-text,
+.report-list .report-list-item.active:focus .list-group-item-text {
+  color: #99ccff;
+}
+.report-list .report-status {
+  float: right !important;
+  float: right;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #f2f2f2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+a.report-list .report-status:hover,
+a.report-list .report-status:focus {
+  color: #f2f2f2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.report-list .report-status:empty {
+  display: none;
+}
+.btn .report-list .report-status {
+  position: relative;
+  top: -1px;
+}
+.report-list .status-1 .report-status {
+  display: none !important;
+}
+.report-list .status-2 .report-status {
+  background-color: #666666;
+}
+.report-list .status-2 .report-status[href]:hover,
+.report-list .status-2 .report-status[href]:focus {
+  background-color: #4d4d4d;
+}
+.report-list .status-3 .report-status {
+  background-color: #0066cc;
+}
+.report-list .status-3 .report-status[href]:hover,
+.report-list .status-3 .report-status[href]:focus {
+  background-color: #004c99;
+}
+.report-list .status-4 .report-status {
+  background-color: #339933;
+}
+.report-list .status-4 .report-status[href]:hover,
+.report-list .status-4 .report-status[href]:focus {
+  background-color: #267326;
+}
+.report-list .status-5 .report-status {
+  background-color: #ff9933;
+}
+.report-list .status-5 .report-status[href]:hover,
+.report-list .status-5 .report-status[href]:focus {
+  background-color: #ff8000;
+}
+.report-list .report-added {
+  font-size: 12px;
+}
+.report-list .report-type {
+  display: block;
+  font-weight: bold;
+}
+.report-list .report-description {
+  font-size: 12px;
+  font-style: italic;
 }
