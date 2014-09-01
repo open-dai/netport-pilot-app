@@ -1,0 +1,26 @@
+//
+// Navbars
+// --------------------------------------------------
+
+.menubar {
+
+  // Inherit from Bootstrap .navbar
+  .navbar;
+  .navbar-default;
+  .navbar-fixed-bottom;
+
+  // Fake a margin that stays in place when content scrolls below the navbar
+  border-top: 1px solid lighten(@body-bg, 6.5%);
+
+  // Un-float the menu items
+  .navbar-nav {
+    float: none;
+    text-align: center;
+
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+
+}

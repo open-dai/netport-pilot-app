@@ -5613,6 +5613,8 @@ button.close {
 .modal-footer:after,
 #banner:before,
 #banner:after,
+.menubar:before,
+.menubar:after,
 .application:before,
 .application:after {
   content: " ";
@@ -5634,6 +5636,7 @@ button.close {
 .panel-body:after,
 .modal-footer:after,
 #banner:after,
+.menubar:after,
 .application:after {
   clear: both;
 }
@@ -7625,43 +7628,141 @@ button.close {
   -o-transform: scale(1);
   transform: scale(1);
 }
-.navbar-fixed-top {
-  border-top: 5px solid #2b303b;
-  border-bottom: 5px solid #2b303b;
-  right: 5px;
-  left: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.navbar-header {
-  text-align: center;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.navbar-header:before,
-.navbar-header:after {
-  content: " ";
-  display: table;
-}
-.navbar-header:after {
-  clear: both;
-}
-.navbar-header:before,
-.navbar-header:after {
-  content: " ";
-  display: table;
-}
-.navbar-header:after {
-  clear: both;
-}
-.navbar-header .navbar-brand {
-  float: none;
+.menubar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  background-color: #343d46;
+  border-color: #343d46;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+  border-top: 1px solid #39404e;
 }
 @media (min-width: 0) {
-  .navbar-header {
-    float: none;
+  .menubar {
+    border-radius: 1px;
   }
+}
+.menubar .navbar-brand {
+  color: #eff1f5;
+}
+.menubar .navbar-brand:hover,
+.menubar .navbar-brand:focus {
+  color: #eff1f5;
+  background-color: transparent;
+}
+.menubar .navbar-text {
+  color: #c0c5ce;
+}
+.menubar .navbar-nav > li > a {
+  color: #eff1f5;
+}
+.menubar .navbar-nav > li > a:hover,
+.menubar .navbar-nav > li > a:focus {
+  color: #eff1f5;
+  background-color: #4f5b66;
+}
+.menubar .navbar-nav > .active > a,
+.menubar .navbar-nav > .active > a:hover,
+.menubar .navbar-nav > .active > a:focus {
+  color: #eff1f5;
+  background-color: #4f5b66;
+}
+.menubar .navbar-nav > .disabled > a,
+.menubar .navbar-nav > .disabled > a:hover,
+.menubar .navbar-nav > .disabled > a:focus {
+  color: #65737e;
+  background-color: transparent;
+}
+.menubar .navbar-toggle {
+  border-color: #4f5b66;
+}
+.menubar .navbar-toggle:hover,
+.menubar .navbar-toggle:focus {
+  background-color: #65737e;
+}
+.menubar .navbar-toggle .icon-bar {
+  background-color: #c0c5ce;
+}
+.menubar .navbar-collapse,
+.menubar .navbar-form {
+  border-color: #343d46;
+}
+.menubar .navbar-nav > .open > a,
+.menubar .navbar-nav > .open > a:hover,
+.menubar .navbar-nav > .open > a:focus {
+  background-color: #4f5b66;
+  color: #eff1f5;
+}
+@media (max-width: -1) {
+  .menubar .navbar-nav .open .dropdown-menu > li > a {
+    color: #eff1f5;
+  }
+  .menubar .navbar-nav .open .dropdown-menu > li > a:hover,
+  .menubar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #eff1f5;
+    background-color: #4f5b66;
+  }
+  .menubar .navbar-nav .open .dropdown-menu > .active > a,
+  .menubar .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .menubar .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #eff1f5;
+    background-color: #4f5b66;
+  }
+  .menubar .navbar-nav .open .dropdown-menu > .disabled > a,
+  .menubar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .menubar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #65737e;
+    background-color: transparent;
+  }
+}
+.menubar .navbar-link {
+  color: #eff1f5;
+}
+.menubar .navbar-link:hover {
+  color: #eff1f5;
+}
+.menubar .btn-link {
+  color: #eff1f5;
+}
+.menubar .btn-link:hover,
+.menubar .btn-link:focus {
+  color: #eff1f5;
+}
+.menubar .btn-link[disabled]:hover,
+fieldset[disabled] .menubar .btn-link:hover,
+.menubar .btn-link[disabled]:focus,
+fieldset[disabled] .menubar .btn-link:focus {
+  color: #65737e;
+}
+.menubar .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-width: 480px) and (orientation: landscape) {
+  .menubar .navbar-collapse {
+    max-height: 200px;
+  }
+}
+@media (min-width: 0) {
+  .menubar {
+    border-radius: 0;
+  }
+}
+.menubar .navbar-nav {
+  float: none;
+  text-align: center;
+}
+.menubar .navbar-nav > li {
+  float: none;
+  display: inline-block;
 }
 .alert-success {
   background-color: #a3be8c;
@@ -7717,7 +7818,7 @@ button.close {
   margin-right: 5px;
 }
 body {
-  padding-top: 55px;
+  padding-bottom: 55px;
 }
 .application {
   margin-right: auto;
