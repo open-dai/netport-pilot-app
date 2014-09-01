@@ -43,7 +43,7 @@ define([
         },
 
         logout: function() {
-
+            FB.logout();
         },
 
         create: function() {
