@@ -42,14 +42,15 @@ define([
 
         },
 
-        save: function() {
+        save: function(event) {
+            event.preventDefault();
             var report = new ReportModel();
             report.set('type_id', $('#type').val() );
-            report.set('image', $(':input[type="file"]')[0].files[0] );
+            report.set('image', $(':input[type="file"]')[0] );
             report.set('description', $('#description').val() );
             
-            report.save({success: function(){
-                console.log('saved');
+            report.save({success: function(data){
+                console.log('saved'+data);
             }, error: function(err){
                 console.log('something went wrong: '+err);
             }});
