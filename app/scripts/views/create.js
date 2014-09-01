@@ -11,38 +11,48 @@ define([
     var CreateView = Backbone.View.extend({
         template: JST['app/scripts/templates/create.hbs'],
         el: '.content',
-        model: new ReportModel(),
+        //model: new ReportModel(),
         events: {
             'click .save': 'save'
         },
         initialize: function () {
             //this.render();
+            //this.model.url = 'http://172.16.199.159:8888/api/reports';
         },
 
         render: function () {
-            //var report = new ReportModel();
             var that = this;
 
             $('.content').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
             navigator.geolocation.getCurrentPosition(function(position){
-                that.model.set('lat', position.coords.latitude);
-                that.model.set('lng', position.coords.longitude);
-                that.model.set('zoomlevel', 18);
+                var tempReport = new ReportModel();
+
+                
+                tempReport.set('lat', position.coords.latitude);
+                tempReport.set('lng', position.coords.longitude);
+                tempReport.set('zoomlevel', 18);
                 var data = {};
-                data.model = that.model.toJSON();
+                data.model = tempReport.toJSON();
                 data.types = that.collection.toJSON();
 
-                console.log(data);
-
                 that.$el.html(that.template(data));
-                var map = new MapView({model: that.model});
+                var map = new MapView({model: tempReport});
                 map.render();
             });
             
         },
 
         save: function() {
-            console.log('Saving: '+this.model.get('description'));
+            var report = new ReportModel();
+            report.set('type_id', $('#type').val() );
+            report.set('image', $(':input[type="file"]')[0].files[0] );
+            report.set('description', $('#description').val() );
+            
+            report.save({success: function(){
+                console.log('saved');
+            }, error: function(err){
+                console.log('something went wrong: '+err);
+            }});
         }
     });
 
