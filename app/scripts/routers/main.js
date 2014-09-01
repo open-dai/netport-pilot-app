@@ -4,7 +4,7 @@ define([
     'collections/types',
     'models/report',
     'models/user',
-    'views/layout',
+    'views/application',
     'views/index',
     'views/reports',
     'views/map',
@@ -12,7 +12,7 @@ define([
     'views/user',
     'views/settings',
     'facebook'
-], function(Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, LayoutView, IndexView, ReportsView, MapView, CreateView, UserView, SettingsView, FB){
+], function(Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, ApplicationView, IndexView, ReportsView, MapView, CreateView, UserView, SettingsView, FB){
     'use strict';
     var router = Backbone.Router.extend({
         routes: {
@@ -27,8 +27,8 @@ define([
             'logout': 'logout'
         },
         initialize: function() {
-            var layout = new LayoutView.Layout();
-            layout.render();
+            var applicationView = new ApplicationView.Application();
+            applicationView.render();
             //this.bind('all', this.change);
         },
 
@@ -54,7 +54,7 @@ define([
             }, error: function(){
 
             }});
-            
+
         },
 
         user: function() {
@@ -80,11 +80,11 @@ define([
                 }, error: function(err){
                     console.log(err);
                 }});
-                
+
             }, error: function(err){
                 console.log(err);
             }});
-            
+
         },
 
         map: function() {

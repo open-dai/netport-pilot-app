@@ -5611,10 +5611,10 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-#main:before,
-#main:after,
 #banner:before,
-#banner:after {
+#banner:after,
+.application:before,
+.application:after {
   content: " ";
   display: table;
 }
@@ -5633,8 +5633,8 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#main:after,
-#banner:after {
+#banner:after,
+.application:after {
   clear: both;
 }
 .center-block {
@@ -7555,39 +7555,6 @@ button.close {
 .fa-meanpath:before {
   content: "\f20c";
 }
-#main {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-@media (min-width: 768px) {
-  #main {
-    width: 730px;
-  }
-}
-@media (min-width: 992px) {
-  #main {
-    width: 950px;
-  }
-}
-@media (min-width: 1200px) {
-  #main {
-    width: 1150px;
-  }
-}
-#main > .navbar-header,
-#main > .navbar-collapse {
-  margin-right: -5px;
-  margin-left: -5px;
-}
-@media (min-width: 0) {
-  #main > .navbar-header,
-  #main > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
 #banner {
   margin-right: auto;
   margin-left: auto;
@@ -7749,12 +7716,41 @@ button.close {
 .list-group-item > .label + .label {
   margin-right: 5px;
 }
-.leaflet-container {
-  color: black;
-  height: 320px;
-}
 body {
   padding-top: 55px;
+}
+.application {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media (min-width: 768px) {
+  .application {
+    width: 730px;
+  }
+}
+@media (min-width: 992px) {
+  .application {
+    width: 950px;
+  }
+}
+@media (min-width: 1200px) {
+  .application {
+    width: 1150px;
+  }
+}
+.application > .navbar-header,
+.application > .navbar-collapse {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+@media (min-width: 0) {
+  .application > .navbar-header,
+  .application > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 [class^="col-"] {
   margin-bottom: 5px;

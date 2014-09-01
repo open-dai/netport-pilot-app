@@ -10,8 +10,8 @@ define([
 
     var CreateView = Backbone.View.extend({
         template: JST['app/scripts/templates/create.hbs'],
-        el: '.content',
-        //model: new ReportModel(),
+        el: '.main',
+        // model: new ReportModel(),
         events: {
             'click .save': 'save'
         },
@@ -23,7 +23,7 @@ define([
         render: function () {
             var that = this;
 
-            $('.content').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
+            $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
             navigator.geolocation.getCurrentPosition(function(position){
                 var tempReport = new ReportModel();
 
@@ -39,7 +39,7 @@ define([
                 var map = new MapView({model: tempReport});
                 map.render();
             });
-            
+
         },
 
         save: function() {

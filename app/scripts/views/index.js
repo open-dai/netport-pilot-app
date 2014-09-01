@@ -3,7 +3,7 @@ define(['backbone', 'templates'], function(Backbone, JST){
 
     var indexView = Backbone.View.extend({
         template: JST['app/scripts/templates/index.hbs'],
-        el: '.content',
+        el: '.main',
         initialize: function () {
             //this.render();
         },
