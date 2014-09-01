@@ -2,7 +2,7 @@ define(['backbone', 'models/type'], function(Backbone, TypesModel){
     'use strict';
     var Collection = Backbone.Collection.extend({
         model: TypesModel,
-        url: 'http://localhost:8888/api/types',
+        url: 'http://0.0.0.0:8888/api/types',
         parse: function(response) {
             return response;
         },
