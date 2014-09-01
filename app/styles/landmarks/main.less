@@ -1,0 +1,16 @@
+
+.main {
+
+  // Make space for fixed titlebar
+  padding-top: @navbar-height;
+
+  // Make space for fixed menubar
+  padding-bottom: @navbar-height;
+
+  // Make enclosed map container fill the height of the screen
+  > .map-container {
+    margin-top: -@navbar-height;
+    height: 640px; // Must be set explicitly with javascript
+  }
+}
+
