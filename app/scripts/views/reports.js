@@ -21,8 +21,6 @@ define([
 
         render: function () {
             this.$el.html(this.template({reports: this.collection.toJSON()}));
-            var map = new MapView({collection: this.collection});
-            map.render();
         }
     });
 

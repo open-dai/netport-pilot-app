@@ -25,7 +25,7 @@ define([
         el: '.map-container',
         model: MapModel,
         events: {
-            
+
         },
         initialize: function () {
             this.$el.html(this.template());
@@ -50,14 +50,14 @@ define([
                 marker.bindPopup(this.model.get('description'));
                 marker.addTo(this.map.get('map'));
             }
-            
+
         },
 
         addMarker: function() {
-            
+
         }
 
-        
+
     });
 
     return MapView;
