@@ -7977,13 +7977,19 @@ fieldset[disabled] .titlebar .btn-link:focus {
     border-radius: 0;
   }
 }
-.titlebar .navbar-text {
-  font-weight: bold;
-}
-.titlebar .navbar-toggle {
+.titlebar .titlebar-action {
   position: absolute;
   top: 0;
-  left: 5px;
+  right: 0;
+}
+.titlebar .titlebar-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  left: 0;
 }
 .menubar {
   position: relative;
