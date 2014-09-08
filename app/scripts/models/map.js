@@ -7,8 +7,6 @@ define([
     'use strict';
 
     var MapModel = Backbone.Model.extend({
-        url: '',
-
         initialize: function() {
             this.set({map: L.map('map').setView(this.get('coords'), this.get('zoomlevel'))});
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -20,7 +18,8 @@ define([
 
         defaults: {
             coords: [56.169401778813686, 14.864437580108644],
-            zoomlevel: 16
+            zoomlevel: 16,
+            scrollWheelZoom: false
         }
     });
 
