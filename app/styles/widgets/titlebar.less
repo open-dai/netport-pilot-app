@@ -4,15 +4,25 @@
 
 .titlebar {
 
-  // Inherit from Bootstrap .navbar
-  .navbar;
-  .navbar-default;
-  .navbar-fixed-top;
+  .navbar-toggle {
+    border: none;
+    padding-right: @grid-gutter-width / 2;
+    padding-left: @grid-gutter-width / 2;
+  }
+
+  .navbar-title {
+    margin-left: @padding-small-horizontal;
+    padding-left: @padding-small-horizontal;
+    border-left: 1px solid darken(@navbar-default-bg, 15%);
+    font-weight: bold;
+  }
 
   .titlebar-action {
     position: absolute;
     top: 0;
     right: 0;
+    padding-right: @grid-gutter-width / 2;
+    padding-left: @grid-gutter-width / 2;
   }
 
   .titlebar-label {
