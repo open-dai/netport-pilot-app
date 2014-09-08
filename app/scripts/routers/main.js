@@ -29,7 +29,6 @@ define([
         initialize: function() {
             var applicationView = new ApplicationView.Application();
             applicationView.render();
-            //this.bind('all', this.change);
         },
 
         index: function() {
