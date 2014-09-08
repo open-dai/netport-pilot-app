@@ -10,6 +10,7 @@ define([
         template: JST['app/scripts/templates/settings.hbs'],
         el: '.main',
 
+        title: 'Inställningar',
         events: {},
 
         initialize: function () {
@@ -17,6 +18,7 @@ define([
         },
 
         render: function () {
+            $('.navbar-text').html(this.title);
             this.$el.html(this.template());
         }
     });

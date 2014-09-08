@@ -13,6 +13,7 @@ define([
         template: JST['app/scripts/templates/user.hbs'],
         el: '.main',
         model: UserModel,
+        title: 'Profil',
         events: {
             'click .logout': 'logout'
         },
@@ -22,6 +23,7 @@ define([
         },
 
         render: function () {
+            $('.navbar-text').html(this.title);
             var that = this;
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {

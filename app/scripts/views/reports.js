@@ -12,6 +12,7 @@ define([
     Reports.List = Backbone.View.extend({
         template: JST['app/scripts/templates/reports.hbs'],
         el: '.main',
+        title: 'Senaste',
         events: {
 
         },
@@ -20,6 +21,7 @@ define([
         },
 
         render: function () {
+            $('.navbar-text').html(this.title);
             this.$el.html(this.template({reports: this.collection.toJSON()}));
         }
     });

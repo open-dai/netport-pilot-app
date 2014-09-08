@@ -12,6 +12,7 @@ define([
         template: JST['app/scripts/templates/create.hbs'],
         el: '.main',
         // model: new ReportModel(),
+        title: 'Rapportera',
         events: {
             'click .save': 'save'
         },
@@ -21,6 +22,7 @@ define([
         },
 
         render: function () {
+            $('.navbar-text').html(this.title);
             var that = this;
 
             $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
