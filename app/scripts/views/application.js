@@ -23,8 +23,6 @@ define([
             titlebarView.render();
             var menubarView = new View.Menubar();
             menubarView.render();
-            var contentInfoView = new View.ContentInfo();
-            contentInfoView.render();
         }
 
     });
