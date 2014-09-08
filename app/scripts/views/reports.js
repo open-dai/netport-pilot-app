@@ -37,6 +37,7 @@ define([
         },
 
         render: function() {
+            $('.navbar-text').html(this.model.get('type'));
             this.$el.html(this.template(this.model.toJSON()));
             this.model.set('zoomlevel', 18);
             var map = new MapView({model: this.model});
