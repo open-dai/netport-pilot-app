@@ -21,7 +21,7 @@ require.config({
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/underscore/underscore',
-        bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         handlebars: '../bower_components/handlebars/handlebars',
         leaflet: '../bower_components/leaflet-dist/leaflet',
         facebook: 'http://connect.facebook.net/en_US/all',
@@ -33,7 +33,8 @@ require([
     'backbone',
     'routers/main',
     'models/user',
-    'facebook'
+    'facebook',
+    'bootstrap'
 ], function (Backbone, MainRouter, UserModel, FB) {
     var router = new MainRouter();
 
@@ -59,4 +60,12 @@ require([
 
     //Make something global
 
+    var resize = function() {
+        var height = $(window).height() - $('.nav').height();
+        $('data-height(screen)').css('height', height);
+    };
+    
+    $(window).on('load resize', resize);
+
+    //$(window).resize(resize);
 });
