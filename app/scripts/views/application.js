@@ -19,17 +19,34 @@ define([
         render: function () {
             console.log('Rendering Application');
             this.$el.html(this.template());
-            var bannerView = new View.Banner();
-            bannerView.render();
+            var titlebarView = new View.Titlebar();
+            titlebarView.render();
+            var menubarView = new View.Menubar();
+            menubarView.render();
             var contentInfoView = new View.ContentInfo();
             contentInfoView.render();
         }
 
     });
 
-    View.Banner = Backbone.View.extend({
-        template: JST['app/scripts/templates/banner.hbs'],
-        el: '.banner',
+    View.Titlebar = Backbone.View.extend({
+        template: JST['app/scripts/templates/titlebar.hbs'],
+        el: '.titlebar',
+
+        initialize: function() {
+            //this.render();
+        },
+
+        render: function() {
+            console.log('Rendering Titlebar');
+            this.$el.html(this.template());
+        }
+
+    });
+
+    View.Menubar = Backbone.View.extend({
+        template: JST['app/scripts/templates/menubar.hbs'],
+        el: '.menubar',
         events: {
             'click li': 'change'
         },
@@ -39,7 +56,7 @@ define([
         },
 
         render: function() {
-            console.log('Rendering Banner');
+            console.log('Rendering Menubar');
             this.$el.html(this.template());
         },
 
