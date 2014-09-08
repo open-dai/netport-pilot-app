@@ -66,18 +66,5 @@ define([
 
     });
 
-    View.ContentInfo = Backbone.View.extend({
-        template: JST['app/scripts/templates/contentinfo.hbs'],
-        el: '.contentinfo',
-        initialize: function() {
-            //this.render();
-        },
-
-        render: function() {
-            console.log('Rendering ContentInfo');
-            this.$el.html(this.template());
-        }
-    });
-
     return View;
 });
