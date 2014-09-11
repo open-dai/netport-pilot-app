@@ -34,7 +34,7 @@ define([
 
         render: function () {
             if(this.collection) {
-                this.map = new MapModel({zoomlevel: 14});
+                this.map = new MapModel({zoomlevel: 14, scrollWheelZoom: false});
 
                 var map = this.map.get('map');
 
@@ -45,7 +45,7 @@ define([
                 });
 
             } else {
-                this.map = new MapModel({coords: [this.model.get('lat'), this.model.get('lng')], zoomlevel: this.model.get('zoomlevel'), dragging: false});
+                this.map = new MapModel({coords: [this.model.get('lat'), this.model.get('lng')], zoomlevel: this.model.get('zoomlevel'), dragging: false, scrollWheelZoom: false});
                 var marker = new L.Marker([this.model.get('lat'), this.model.get('lng')]);
                 marker.bindPopup(this.model.get('description'));
                 marker.addTo(this.map.get('map'));
