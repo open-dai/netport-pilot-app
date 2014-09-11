@@ -4,21 +4,21 @@ define([
     'backbone',
     'templates',
     'views/map',
-    'models/report'
-], function (Backbone, JST, MapView, ReportModel) {
+    'models/report',
+    'models/user'
+], function (Backbone, JST, MapView, ReportModel, UserModel) {
     'use strict';
 
     var CreateView = Backbone.View.extend({
         template: JST['app/scripts/templates/create.hbs'],
         el: '.main',
-        // model: new ReportModel(),
         title: 'Rapportera',
+        model: new ReportModel(),
         events: {
-            'click .save': 'save'
+            'click .save': 'saveFile'
         },
         initialize: function () {
-            //this.render();
-            //this.model.url = 'http://172.16.199.159:8888/api/reports';
+            
         },
 
         render: function () {
@@ -27,35 +27,50 @@ define([
 
             $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
             navigator.geolocation.getCurrentPosition(function(position){
-                var tempReport = new ReportModel();
 
                 
-                tempReport.set('lat', position.coords.latitude);
-                tempReport.set('lng', position.coords.longitude);
-                tempReport.set('zoomlevel', 18);
+                that.model.set('lat', position.coords.latitude);
+                that.model.set('lng', position.coords.longitude);
+                that.model.set('zoomlevel', 18);
                 var data = {};
-                data.model = tempReport.toJSON();
+                data.model = that.model.toJSON();
                 data.types = that.collection.toJSON();
 
                 that.$el.html(that.template(data));
-                var map = new MapView({model: tempReport});
+                var map = new MapView({model: that.model});
                 map.render();
             });
-
         },
 
-        save: function(event) {
+        saveFile: function() {
             event.preventDefault();
-            var report = new ReportModel();
-            report.set('type_id', $('#type').val() );
-            report.set('image', $(':input[type="file"]')[0] );
-            report.set('description', $('#description').val() );
+
+            var picture = $('input')[0].files[0];
+            var data = new FormData();
+            data.append('type_id', $('#type').val());
+            data.append('description', $('#description').val());
+            data.append('file', picture);
+            data.append('fb_id', UserModel.get('id'));
+            data.append('lat', this.model.get('lat'));
+            data.append('lng', this.model.get('lng'));
             
-            report.save({success: function(data){
-                console.log('saved'+data);
-            }, error: function(err){
-                console.log('something went wrong: '+err);
-            }});
+            $.ajax({
+                url: 'http://0.0.0.0:8888/api/reports',
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function(data) {
+                    console.log('file uploaded');
+                    console.log(data);
+                },
+                error: function(data) {
+                    console.log('error');
+                    console.log(data);
+                }
+            });
+            
         }
     });
 
