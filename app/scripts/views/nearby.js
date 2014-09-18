@@ -4,8 +4,9 @@ define([
     'backbone',
     'templates',
     'leaflet',
-    'models/map'
-], function (Backbone, JST, L, MapModel) {
+    'models/map',
+    'views/map'
+], function (Backbone, JST, L, MapModel, MapView) {
     'use strict';
 
     var NearbyView = Backbone.View.extend({
@@ -26,8 +27,8 @@ define([
             this.$el.html(this.template());
             this.$el.data('view', this.slug);
 
-            this.map = new MapModel({zoomlevel: 14, scrollWheelZoom: false});
-            var map = this.map.get('map');
+            var map = new MapView({collection: this.collection});
+            map.render();
 
             $.each(this.collection.toJSON(), function(i, item){
                 var marker = new L.Marker([item.lat, item.lng]);

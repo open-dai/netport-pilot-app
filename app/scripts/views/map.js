@@ -8,18 +8,6 @@ define([
 ], function (Backbone, JST, L, MapModel) {
     'use strict';
 
-    /*var myIcon = L.icon({
-        iconUrl: 'images/marker-icon.png',
-        iconRetinaUrl: 'images/marker-icon-2x.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [2, -41],
-        shadowUrl: 'images/marker-shadow.png',
-        shadowRetinaUrl: 'images/marker-shadow-2x.png',
-        shadowSize: [25, 41],
-        shadowAnchor: [7, 41]
-    });*/
-
     var MapView = Backbone.View.extend({
         template: JST['app/scripts/templates/map.hbs'],
         el: '.map-container',
@@ -33,11 +21,10 @@ define([
         },
 
         render: function () {
-            this.$el.html(this.template());
             this.$el.data('view', this.slug);
-
+            this.$el.html(this.template());
             if(this.collection) {
-                this.map = new MapModel({zoomlevel: 14, scrollWheelZoom: false});
+                this.map = new MapModel();
 
                 var map = this.map.get('map');
 
@@ -48,7 +35,8 @@ define([
                 });
 
             } else {
-                this.map = new MapModel({coords: [this.model.get('lat'), this.model.get('lng')], zoomlevel: this.model.get('zoomlevel'), dragging: false, scrollWheelZoom: false});
+                this.$el.html(this.template());
+                this.map = new MapModel({coords: [this.model.get('lat'), this.model.get('lng')], zoomlevel: this.model.get('zoomlevel')});
                 var marker = new L.Marker([this.model.get('lat'), this.model.get('lng')]);
                 marker.bindPopup(this.model.get('description'));
                 marker.addTo(this.map.get('map'));
