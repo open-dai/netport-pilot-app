@@ -9,6 +9,7 @@ define([
     var SettingsView = Backbone.View.extend({
         template: JST['app/scripts/templates/settings.hbs'],
         el: '.main',
+        slug: 'settings',
         title: 'Inställningar',
         events: {},
 
@@ -18,7 +19,9 @@ define([
 
         render: function () {
             $('.navbar-text').html(this.title);
+
             this.$el.html(this.template());
+            this.$el.data('view', this.slug);
         }
     });
 

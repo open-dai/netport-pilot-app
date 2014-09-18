@@ -12,6 +12,7 @@ define([
     var UserView = Backbone.View.extend({
         template: JST['app/scripts/templates/user.hbs'],
         el: '.main',
+        slug: 'user',
         model: UserModel,
         title: 'Profil',
         events: {
@@ -24,6 +25,8 @@ define([
 
         render: function () {
             $('.navbar-text').html(this.title);
+            this.$el.data('view', this.slug);
+
             var that = this;
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {

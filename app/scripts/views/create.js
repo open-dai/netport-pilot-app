@@ -12,23 +12,22 @@ define([
     var CreateView = Backbone.View.extend({
         template: JST['app/scripts/templates/create.hbs'],
         el: '.main',
+        slug: 'create',
         title: 'Rapportera',
         model: new ReportModel(),
         events: {
             'click .save': 'saveFile'
         },
         initialize: function () {
-            
         },
 
         render: function () {
             $('.navbar-text').html(this.title);
             var that = this;
 
-            $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
-            navigator.geolocation.getCurrentPosition(function(position){
+            $('body').append('<div class="loader fa-stack fa-3x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x fa-inverse"></i></div>');
 
-                
+            navigator.geolocation.getCurrentPosition(function(position){
                 that.model.set('lat', position.coords.latitude);
                 that.model.set('lng', position.coords.longitude);
                 that.model.set('zoomlevel', 18);
@@ -37,8 +36,11 @@ define([
                 data.types = that.collection.toJSON();
 
                 that.$el.html(that.template(data));
+                that.$el.data('view', that.slug);
+
                 var map = new MapView({model: that.model});
                 map.render();
+                $('.loader', 'body').remove();
             });
         },
 
@@ -53,7 +55,7 @@ define([
             data.append('fb_id', UserModel.get('id'));
             data.append('lat', this.model.get('lat'));
             data.append('lng', this.model.get('lng'));
-            
+
             $.ajax({
                 url: 'http://0.0.0.0:8888/api/reports',
                 data: data,
@@ -70,7 +72,7 @@ define([
                     console.log(data);
                 }
             });
-            
+
         }
     });
 

@@ -7845,6 +7845,13 @@ button.close {
   margin-top: -50px;
   height: 640px;
 }
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -42px;
+  margin-left: -42px;
+}
 .titlebar .navbar-toggle {
   border: none;
   padding-right: 15px;
@@ -7863,6 +7870,7 @@ button.close {
   right: 0;
   padding-right: 15px;
   padding-left: 15px;
+  display: none;
 }
 .titlebar .titlebar-label {
   text-align: center;
@@ -7876,10 +7884,15 @@ button.close {
 .menubar .navbar-nav {
   float: none;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .menubar .navbar-nav > li {
   float: none;
   display: inline-block;
+}
+.menubar .fa-stack .fa:first-child {
+  color: rgba(0, 0, 0, 0.3);
 }
 .report-list {
   margin-bottom: 20px;
