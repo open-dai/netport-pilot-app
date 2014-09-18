@@ -7843,7 +7843,6 @@ button.close {
 }
 .main > .map-container {
   margin-top: -50px;
-  height: 640px;
 }
 .loader {
   position: fixed;

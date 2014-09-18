@@ -11,8 +11,9 @@ define([
     'views/create',
     'views/user',
     'views/settings',
+    'views/nearby',
     'facebook'
-], function(Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, ApplicationView, IndexView, ReportsView, MapView, CreateView, UserView, SettingsView, FB){
+], function (Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, ApplicationView, IndexView, ReportsView, MapView, CreateView, UserView, SettingsView, NearbyView, FB) {
     'use strict';
     var router = Backbone.Router.extend({
         routes: {
@@ -25,7 +26,8 @@ define([
             'user': 'user',
             'settings': 'settings',
             'login': 'login',
-            'logout': 'logout'
+            'logout': 'logout',
+            'nearby': 'nearby'
         },
         initialize: function() {
             var applicationView = new ApplicationView.Application();
@@ -33,7 +35,6 @@ define([
         },
 
         index: function() {
-            console.log('index');
             var index = new IndexView();
             index.render();
         },
@@ -47,7 +48,6 @@ define([
         },
 
         create: function() {
-            console.log('create');
             TypesCollection.fetch({success: function(){
                 var createview = new CreateView({collection: TypesCollection});
                 createview.render();
@@ -80,15 +80,19 @@ define([
                 }, error: function(err){
                     console.log(err);
                 }});
-
             }, error: function(err){
                 console.log(err);
             }});
-
         },
 
-        map: function() {
-            console.log('map');
+        nearby: function() {
+            console.log('nearby');
+            ReportCollection.fetch({success: function(){
+                var nearbyView = new NearbyView({collection: ReportCollection});
+                nearbyView.render();
+            }, error: function(err){
+                console.log(err);
+            }});
         }
     });
 
