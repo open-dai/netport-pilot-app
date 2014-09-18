@@ -29,12 +29,6 @@ define([
 
             var map = new MapView({collection: this.collection});
             map.render();
-
-            $.each(this.collection.toJSON(), function(i, item){
-                var marker = new L.Marker([item.lat, item.lng]);
-                marker.bindPopup(item.description);
-                marker.addTo(map);
-            });
         }
     });
 

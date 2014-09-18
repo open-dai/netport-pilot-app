@@ -22,16 +22,17 @@ define([
 
         render: function () {
             this.$el.data('view', this.slug);
-            this.$el.html(this.template());
+            
             if(this.collection) {
-                this.map = new MapModel();
+                this.$el.html(this.template());
+                var map = new MapModel({dragging: true});
 
-                var map = this.map.get('map');
+                var mapObject = map.get('map');
 
                 $.each(this.collection.toJSON(), function(i, item){
                     var marker = new L.Marker([item.lat, item.lng]);
                     marker.bindPopup(item.description);
-                    marker.addTo(map);
+                    marker.addTo(mapObject);
                 });
 
             } else {
@@ -41,10 +42,6 @@ define([
                 marker.bindPopup(this.model.get('description'));
                 marker.addTo(this.map.get('map'));
             }
-
-        },
-
-        addMarker: function() {
 
         }
 
