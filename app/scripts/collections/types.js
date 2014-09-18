@@ -12,11 +12,11 @@ define(['backbone', 'models/type'], function(Backbone, TypesModel){
         },
 
         ajaxStart: function() {
-            $('.main').html('<div class="text-center"><i class="fa fa-cog fa-spin fa-5x"></i></div>');
+            $('body').append('<div class="loader fa-stack fa-3x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-cog fa-spin fa-stack-1x fa-inverse"></i></div>');
         },
 
         ajaxComplete: function() {
-
+            $('.loader', 'body').remove();
         }
     });
 
