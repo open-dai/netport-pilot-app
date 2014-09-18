@@ -8,7 +8,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @base0C;
+@body-bg:               @base07;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -22,9 +22,18 @@
 //
 //##
 
-@navbar-default-color:             @base02;
-@navbar-default-bg:                fade(@base07, 94%);
+@navbar-default-color:             @base07;
+@navbar-default-bg:                fade(@base0D, 90%);
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+
+// Navbar links
+@navbar-default-link-color:                @base07;
+@navbar-default-link-hover-color:          white;
+@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-active-color:         white;
+@navbar-default-link-active-bg:            transparent;
+@navbar-default-link-disabled-color:       @base07;
+@navbar-default-link-disabled-bg:          transparent;
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg:           transparent;
@@ -57,7 +66,7 @@
 //##
 
 //** Background color on `.list-group-item`
-@list-group-bg:                 white;
+@list-group-bg:                 @base07;
 //** `.list-group-item` border color
 @list-group-border:             @gray-lighter;
 //** List group border radius

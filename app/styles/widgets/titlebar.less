@@ -9,13 +9,15 @@
     padding-right: @grid-gutter-width / 2;
     padding-left: @grid-gutter-width / 2;
     margin-bottom: 0;
+
+    color: @navbar-default-link-color;
   }
 
   .navbar-title {
-    margin-left: @padding-small-horizontal;
+    margin-left: @padding-small-horizontal - 5px; // pixeljog
     padding-left: @padding-small-horizontal;
-    border-left: 1px solid darken(@navbar-default-bg, 15%);
-    font-weight: bold;
+    border-left: 1px solid @navbar-default-border;
+    font-weight: normal;
   }
 
   .titlebar-action {
@@ -26,17 +28,6 @@
     padding-left: @grid-gutter-width / 2;
 
     display: none; // hidden by default
-  }
-
-  .titlebar-label {
-    text-align: center;
-    font-size: @font-size-h5;
-    font-weight: bold;
-
-    position: absolute;
-    top: 15px;
-    right: 0;
-    left: 0;
   }
 
 }

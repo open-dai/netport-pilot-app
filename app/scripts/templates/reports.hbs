@@ -1,12 +1,14 @@
-<ul class="report-list">
-    {{#each reports}}
-    <a href="#reports/{{id}}" class="report-{{id}} status-{{status_id}} type-{{types_id}}">
-        <li class="report-list-item">
-            <span class="report-status">{{status}}</span>
-            <span class="report-type">{{type}}</span>
-            <span class="report-added">{{formatDate added}}</span>
-            <span class="report-description">&ldquo;{{description}}&rdquo;</span>
-        </li>
-    </a>
-    {{/each}}
-</ul>
+<div class="col-xs-12">
+    <ul class="report-list row">
+        {{#each reports}}
+        <a href="#reports/{{id}}" class="report-{{id}} status-{{status_id}} type-{{types_id}}">
+            <li class="report-list-item">
+                <span class="report-status">{{status}}</span>
+                <span class="report-type">{{type}}</span>
+                <span class="report-added">{{formatDate added}}</span>
+                <span class="report-description">&ldquo;{{description}}&rdquo;</span>
+            </li>
+        </a>
+        {{/each}}
+    </ul>
+</div>
