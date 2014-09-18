@@ -63,7 +63,7 @@ define([
                 contentType: false,
                 processData: false,
                 type: 'POST',
-                success: function(data) {
+                success: function() {
                     console.log('file uploaded');
                     Backbone.history.navigate('#reports', {trigger:true});
                 },
