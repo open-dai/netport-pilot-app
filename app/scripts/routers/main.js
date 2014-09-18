@@ -21,6 +21,7 @@ define([
             'reports/:id': 'reports',
             'map': 'map',
             'create': 'create',
+            'saved': 'saved',
             'user': 'user',
             'settings': 'settings',
             'login': 'login',
