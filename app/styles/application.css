@@ -7870,6 +7870,7 @@ button.close {
   right: 0;
   padding-right: 15px;
   padding-left: 15px;
+  display: none;
 }
 .titlebar .titlebar-label {
   text-align: center;
