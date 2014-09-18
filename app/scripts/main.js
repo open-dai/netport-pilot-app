@@ -3,6 +3,10 @@
 
 require.config({
     shim: {
+        backbone: {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
         bootstrap: {
             deps: ['jquery'],
             exports: 'jquery'
@@ -34,7 +38,8 @@ require([
     'routers/main',
     'models/user',
     'facebook',
-    'bootstrap'
+    'bootstrap',
+    'jquery'
 ], function (Backbone, MainRouter, UserModel, FB) {
     var router = new MainRouter();
 
