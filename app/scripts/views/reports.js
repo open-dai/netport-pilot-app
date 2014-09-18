@@ -41,9 +41,10 @@ define([
 
         render: function() {
             $('.navbar-text').html(this.model.get('type'));
-            this.$el.html(this.template(this.model.toJSON()));
             this.model.set('zoom', 18);
             this.model.set('scrollWheelZoom', false);
+            this.model.set('dragging', false);
+            this.$el.html(this.template(this.model.toJSON()));
             var map = new MapView({model: this.model});
             map.render();
         }
