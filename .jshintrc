@@ -32,6 +32,8 @@
         "expect": true,
         "should": true,
         "require": false,
-        "define": false
+        "define": false,
+        "$": false,
+        "jQuery": false
     }
 }
