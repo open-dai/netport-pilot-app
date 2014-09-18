@@ -23,16 +23,19 @@ define([
     var MapView = Backbone.View.extend({
         template: JST['app/scripts/templates/map.hbs'],
         el: '.map-container',
+        slug: 'map',
         model: MapModel,
         events: {
 
         },
         initialize: function () {
-            this.$el.html(this.template());
             //this.render();
         },
 
         render: function () {
+            this.$el.html(this.template());
+            this.$el.data('view', this.slug);
+
             if(this.collection) {
                 this.map = new MapModel({zoomlevel: 14, scrollWheelZoom: false});
 

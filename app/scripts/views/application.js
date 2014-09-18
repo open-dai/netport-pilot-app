@@ -11,6 +11,7 @@ define([
     View.Application = Backbone.View.extend({
         template: JST['app/scripts/templates/application.hbs'],
         el: '.application',
+        slug: 'application',
 
         initialize: function () {
             //this.render();
@@ -19,6 +20,8 @@ define([
         render: function () {
             console.log('Rendering Application');
             this.$el.html(this.template());
+            this.$el.data('view', this.slug);
+
             var titlebarView = new View.Titlebar();
             titlebarView.render();
             var menubarView = new View.Menubar();

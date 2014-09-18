@@ -12,13 +12,13 @@ define([
     var CreateView = Backbone.View.extend({
         template: JST['app/scripts/templates/create.hbs'],
         el: '.main',
+        slug: 'create',
         title: 'Rapportera',
         model: new ReportModel(),
         events: {
             'click .save': 'saveFile'
         },
         initialize: function () {
-
         },
 
         render: function () {
@@ -36,6 +36,8 @@ define([
                 data.types = that.collection.toJSON();
 
                 that.$el.html(that.template(data));
+                that.$el.data('view', that.slug);
+
                 var map = new MapView({model: that.model});
                 map.render();
                 $('.loader', 'body').remove();

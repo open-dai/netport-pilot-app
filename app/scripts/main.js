@@ -44,6 +44,11 @@ require([
         appId      : '661666163920134',
     });
 
+    // This registers a new helper method on the Handlebars template
+    Handlebars.registerHelper('formatDate', function(dateString){
+        var date = new Date(dateString);
+        return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+    });
 
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
