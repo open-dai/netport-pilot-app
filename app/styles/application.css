@@ -7876,10 +7876,15 @@ button.close {
 .menubar .navbar-nav {
   float: none;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .menubar .navbar-nav > li {
   float: none;
   display: inline-block;
+}
+.menubar .fa-stack .fa:first-child {
+  color: rgba(0, 0, 0, 0.3);
 }
 .report-list {
   margin-bottom: 20px;
