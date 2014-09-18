@@ -38,9 +38,10 @@ require([
     'routers/main',
     'models/user',
     'facebook',
+    'handlebars',
     'bootstrap',
     'jquery'
-], function (Backbone, MainRouter, UserModel, FB) {
+], function (Backbone, MainRouter, UserModel, FB, Handlebars) {
     var router = new MainRouter();
 
     Backbone.history.start();
