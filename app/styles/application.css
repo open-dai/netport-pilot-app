@@ -7882,8 +7882,11 @@ button.close {
   float: none;
   display: inline-block;
 }
+.menubar .fa-stack .fa {
+  color: rgba(0, 0, 0, 0.8);
+}
 .menubar .fa-stack .fa:first-child {
-  color: rgba(0, 0, 0, 0.3);
+  color: #ffcc00;
 }
 .report-list {
   margin-bottom: 20px;
