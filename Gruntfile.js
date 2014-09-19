@@ -241,6 +241,16 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            'leaflet': {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/bower_components/leaflet-dist/images/',
+                    dest: '<%= yeoman.app %>/images',
+                    src: [
+                        '{,*/}*.*'
+                    ]
+                }]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -318,6 +328,7 @@ module.exports = function (grunt) {
             'handlebars',
             'less',
             'copy:font-awesome',
+            'copy:leaflet',
             'connect:livereload',
             'open:server',
             'watch'

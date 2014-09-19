@@ -27,6 +27,7 @@
     "grunt-usemin": "~0.1.12",
     "jshint-stylish": "~0.1.5",
     "load-grunt-tasks": "~0.3.0",
+    "optipng-bin": "^1.0.1",
     "time-grunt": "~0.2.8"
   },
   "engines": {
