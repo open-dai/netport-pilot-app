@@ -41,6 +41,10 @@ define([
         render: function() {
             console.log('Rendering Titlebar');
             this.$el.html(this.template());
+
+            $('.titlebar-action', this.$el).on('click', function() {
+                Backbone.history.navigate('/logout', true);
+            })
         }
 
     });

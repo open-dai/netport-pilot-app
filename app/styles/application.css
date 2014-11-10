@@ -7859,10 +7859,7 @@ button.close {
   color: #f2f2f2;
 }
 .titlebar .navbar-title {
-  margin-left: 5px;
-  padding-left: 10px;
-  border-left: 1px solid rgba(0, 85, 171, 0.9);
-  font-weight: normal;
+  font-weight: bold;
 }
 .titlebar .titlebar-action {
   position: absolute;
@@ -7870,7 +7867,6 @@ button.close {
   right: 0;
   padding-right: 15px;
   padding-left: 15px;
-  display: none;
 }
 .menubar .navbar-nav {
   float: none;

@@ -9,11 +9,9 @@ define([
     'views/reports',
     'views/map',
     'views/create',
-    'views/user',
-    'views/settings',
     'views/nearby',
     'facebook'
-], function (Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, ApplicationView, IndexView, ReportsView, MapView, CreateView, UserView, SettingsView, NearbyView, FB) {
+], function (Backbone, ReportCollection, TypesCollection, ReportModel, UserModel, ApplicationView, IndexView, ReportsView, MapView, CreateView, NearbyView, FB) {
     'use strict';
     var router = Backbone.Router.extend({
         routes: {
@@ -63,16 +61,6 @@ define([
 
             }});
 
-        },
-
-        user: function() {
-            var userview = new UserView({model: UserModel});
-            userview.render();
-        },
-
-        settings: function() {
-            var settingsView = new SettingsView();
-            settingsView.render();
         },
 
         reports: function(id) {
