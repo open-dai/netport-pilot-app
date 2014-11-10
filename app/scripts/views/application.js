@@ -43,7 +43,7 @@ define([
             this.$el.html(this.template());
 
             $('.titlebar-action', this.$el).on('click', function() {
-                Backbone.history.navigate('/logout', true);
+                Backbone.history.navigate('logout', true);
             })
         }
 
