@@ -51,6 +51,9 @@ require([
 ], function (Backbone, MainRouter, UserModel, FB, Handlebars) {
     var router = new MainRouter();
 
+    $('.hidden-loggedout').hide();
+    $('.hidden-loggedin').show();
+
     Backbone.history.start();
 
     FB.init({
@@ -69,10 +72,11 @@ require([
                 UserModel.set(response);
                 FB.api('/me?fields=picture', function(response){
                     UserModel.set(response.name);
-                    router.navigate('#reports', {trigger: true});
+                    $('.hidden-loggedout').show();
+                    $('.hidden-loggedin').hide();
+                    router.navigate('reports', {trigger: true});
                 });
             });
-
         }
     });
 

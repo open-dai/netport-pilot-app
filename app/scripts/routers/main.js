@@ -41,12 +41,16 @@ define([
 
         login: function() {
             FB.login(function() {
+                $('.hidden-loggedout').show();
+                $('.hidden-loggedin').hide();
                 Backbone.history.navigate('reports', true);
             });
         },
 
         logout: function() {
             FB.logout(function() {
+                $('.hidden-loggedout').hide();
+                $('.hidden-loggedin').show();
                 Backbone.history.navigate('/', true);
             });
         },
