@@ -2,7 +2,7 @@ define(['backbone', 'models/report'], function(Backbone, ReportModel){
     'use strict';
     var Collection = Backbone.Collection.extend({
         model: ReportModel,
-        url: 'http://0.0.0.0:8888/api/reports',
+        url: $.env.apiReportsUri,
         parse: function(response) {
             return response.reports;
         },
