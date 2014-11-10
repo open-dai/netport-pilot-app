@@ -44,7 +44,9 @@ define([
         },
 
         logout: function() {
-            FB.logout();
+            FB.logout(function() {
+                Backbone.history.navigate('/', true);
+            });
         },
 
         create: function() {

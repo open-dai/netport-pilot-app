@@ -46,10 +46,7 @@ define([
         },
 
         logout: function() {
-            FB.logout(function(response) {
-                // user is now logged out
-                console.log(response);
-            });
+            Backbone.history.navigate('/logout', true);
         }
     });
 
