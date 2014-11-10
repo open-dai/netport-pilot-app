@@ -40,13 +40,13 @@ define([
         },
 
         login: function() {
-            FB.login(function(response) {
+            FB.login(function() {
                 Backbone.history.navigate('reports', true);
             });
         },
 
         logout: function() {
-            FB.logout(function(response) {
+            FB.logout(function() {
                 Backbone.history.navigate('/', true);
             });
         },
