@@ -8024,3 +8024,39 @@ a.report-list .report-status:focus {
   font-size: 12px;
   font-style: italic;
 }
+.space-top-small {
+  margin-top: 5px;
+}
+.space-top-base {
+  margin-top: 6px;
+}
+.space-top-large {
+  margin-top: 10px;
+}
+.space-bottom-small {
+  margin-bottom: 5px;
+}
+.space-bottom-base {
+  margin-bottom: 6px;
+}
+.space-bottom-large {
+  margin-bottom: 10px;
+}
+.space-left-small {
+  margin-left: 10px;
+}
+.space-left-base {
+  margin-left: 12px;
+}
+.space-left-large {
+  margin-left: 16px;
+}
+.space-right-small {
+  margin-right: 10px;
+}
+.space-right-base {
+  margin-right: 12px;
+}
+.space-right-large {
+  margin-right: 16px;
+}
