@@ -57,7 +57,7 @@ define([
             data.append('lng', this.model.get('lng'));
 
             $.ajax({
-                url: apiReportsUri,
+                url: $.env.apiReportsUri,
                 data: data,
                 cache: false,
                 contentType: false,

@@ -44,7 +44,7 @@ define([
 
             $('.titlebar-action', this.$el).on('click', function() {
                 Backbone.history.navigate('logout', true);
-            })
+            });
         }
 
     });
