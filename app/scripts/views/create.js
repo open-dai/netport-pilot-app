@@ -57,7 +57,7 @@ define([
             data.append('lng', this.model.get('lng'));
 
             $.ajax({
-                url: 'http://0.0.0.0:8888/api/reports',
+                url: apiReportsUri,
                 data: data,
                 cache: false,
                 contentType: false,
@@ -65,10 +65,9 @@ define([
                 type: 'POST',
                 success: function() {
                     console.log('file uploaded');
-                    Backbone.history.navigate('#reports', {trigger:true});
+                    Backbone.history.navigate('reports', {trigger:true});
                 },
                 error: function(data) {
-                    console.log('error');
                     console.log(data);
                 }
             });
