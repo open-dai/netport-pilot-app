@@ -4,32 +4,39 @@
 require.config({
     shim: {
         backbone: {
-            deps: ['underscore', 'jquery'],
+            deps: ['underscore', 'jquery', 'env'],
             exports: 'Backbone'
         },
         bootstrap: {
-            deps: ['jquery'],
+            deps: ['jquery', 'env'],
             exports: 'jquery'
         },
         handlebars: {
+            deps: ['env'],
             exports: 'Handlebars'
         },
         facebook: {
+            deps: ['env'],
             exports: 'FB'
         },
         q: {
+            deps: ['env'],
             exports: 'Q'
+        },
+        env: {
+            deps: ['jquery']
         }
     },
     paths: {
-        jquery: '../bower_components/jquery/dist/jquery',
-        backbone: '../bower_components/backbone/backbone',
+        env:        'env',
+        jquery:     '../bower_components/jquery/dist/jquery',
+        backbone:   '../bower_components/backbone/backbone',
         underscore: '../bower_components/underscore/underscore',
-        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
+        bootstrap:  '../bower_components/bootstrap/dist/js/bootstrap',
         handlebars: '../bower_components/handlebars/handlebars',
-        leaflet: '../bower_components/leaflet-dist/leaflet',
-        facebook: 'http://connect.facebook.net/en_US/all',
-        q: '../bower_components/q/q'
+        leaflet:    '../bower_components/leaflet-dist/leaflet',
+        facebook:   'http://connect.facebook.net/en_US/all',
+        q:          '../bower_components/q/q'
     }
 });
 
@@ -40,14 +47,14 @@ require([
     'facebook',
     'handlebars',
     'bootstrap',
-    'jquery'
+    'env'
 ], function (Backbone, MainRouter, UserModel, FB, Handlebars) {
     var router = new MainRouter();
 
     Backbone.history.start();
 
     FB.init({
-        appId      : '661666163920134',
+        appId      : $.env.fbAppId,
     });
 
     // This registers a new helper method on the Handlebars template
