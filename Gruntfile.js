@@ -164,7 +164,7 @@ module.exports = function (grunt) {
                     },
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
-                    generateSourceMaps: true,
+                    //generateSourceMaps: true,
                     // required to support SourceMaps
                     // http://requirejs.org/docs/errors.html#sourcemapcomments
                     preserveLicenseComments: false,
@@ -288,7 +288,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                        //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '/styles/fonts/{,*/}*.*',
                     ]
                 }
