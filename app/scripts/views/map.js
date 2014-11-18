@@ -21,6 +21,7 @@ define([
         },
 
         render: function () {
+            L.Icon.Default.imagePath = 'images';
             this.$el.data('view', this.slug);
             
             if(this.collection) {
